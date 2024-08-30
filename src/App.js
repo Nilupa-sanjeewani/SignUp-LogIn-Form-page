@@ -1,12 +1,22 @@
 import './App.css';
-import signup from './signup/signup';
+import Login from './login/Login';
+import Signup from './signup/signup';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 function App() {
-  return (
-    <div className="App">
-      <h1>React App</h1>
-    </div>
-  );
+  const route = createBrowserRouter([
+    {
+      path: "/",
+      element: <Signup />,
+    },
+    {
+      path: "/login",
+      element: <Login />,
+    }
+  ]);
+  return (<div className="App">
+    <RouterProvider router={route}></RouterProvider>
+  </div>);
 }
 
 export default App;
